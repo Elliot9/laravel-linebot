@@ -26,7 +26,7 @@ class TestController extends Controller
 
     public function webhook()
     {	
-		$this->lineBotService->pushMessage('回復雞器人');
+		$this->lineBotService->returnMessage('你才是');
     	// \Log::info($request);
     }
 }

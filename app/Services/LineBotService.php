@@ -45,4 +45,14 @@ class LineBotService
 
            return new TemplateMessageBuilder('Elliot Bot Test', $target);
        }
+
+    private $data;
+    public function returnMessage($content): Response
+    {
+      $this->data = $data;
+        if (is_string($content)) {
+            $content = new TextMessageBuilder($data['text'].$content);
+        }
+        return $this->lineBot->pushMessage($this->lineUserId, $content);
+    }
 }
