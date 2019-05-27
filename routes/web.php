@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/','TestController@index')->name('index');
+Route::post('/','TestController@webhook')->name('test');
