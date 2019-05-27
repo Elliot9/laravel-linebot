@@ -11,14 +11,14 @@ class LineBotService
     /** @var LINEBot */
     private $lineBot;
     private $lineUserId;
-    private $text;
+    private $replyToken;
 
 
-    public function __construct($lineUserId,$text)
+    public function __construct($lineUserId,$replyToken)
     {
         $this->lineUserId = $lineUserId;
+        $this->replyToken = $replyToken;
         $this->lineBot = app(LINEBot::class);
-        $this->text = $text;
     }
 
     public function fake()
@@ -49,11 +49,11 @@ class LineBotService
            return new TemplateMessageBuilder('Elliot Bot Test', $target);
        }
 
-    public function returnMessage($content): Response
+    public function replyMessage($content): Response
     {
         if (is_string($content)) {
-            $content = new TextMessageBuilder($text.$content);
+            $content = new TextMessageBuilder($content);
         }
-        return $this->lineBot->pushMessage($this->lineUserId, $content);
+        return $this->lineBot->replyMessage($this->replyToken, $content);
     }
 }
