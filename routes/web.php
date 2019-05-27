@@ -13,4 +13,4 @@
 
 
 Route::get('/','TestController@index')->name('index');
-Route::post('/','TestController@webhook')->name('test');
+Route::post('/webhook','TestController@webhook')->name('test');
