@@ -24,8 +24,9 @@ class TestController extends Controller
 
     }
 
-    public function webhook(Request $request)
+    public function webhook()
     {	
-    	\Log::info($request);
+		$this->lineBotService->pushMessage('回復雞器人');
+    	// \Log::info($request);
     }
 }
