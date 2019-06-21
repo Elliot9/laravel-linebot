@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-// use LINE\LINEBot;
+use LINE\LINEBot;
 
 use Illuminate\Http\Request;
 use App\Services\LineBotService;
