@@ -22,7 +22,7 @@ class TestController extends Controller
       //       'Fat Seal'
       //   );
       //   $this->lineBotService->pushMessage($target);
-        dd(App(LINEBot::class));
+        dd(app(LINEBot::class));
 
     }
 
