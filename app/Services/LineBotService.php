@@ -14,10 +14,11 @@ class LineBotService
     private $replyToken;
 
 
-    public function __construct($lineUserId,$replyToken)
+    // public function __construct($lineUserId,$replyToken)
+    public function __construct($lineUserId)
     {
         $this->lineUserId = $lineUserId;
-        $this->replyToken = $replyToken;
+        // $this->replyToken = $replyToken;
         $this->lineBot = app(LINEBot::class);
     }
 
