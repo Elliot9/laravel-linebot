@@ -15,6 +15,8 @@ class TestController extends Controller
  //    }
     public function index()
     {
+        $content = new TextMessageBuilder('Elliot現在沒空');
+        app(LINEBot::class)->pushMessage(env('LINE_USER_ID'),$content);
     	// $this->lineBotService->pushMessage('Elliot現在沒空');
         // 
     	 // $target = $this->lineBotService->buildTemplateMessageBuilderDeprecated(
@@ -23,7 +25,7 @@ class TestController extends Controller
       //       'Fat Seal'
       //   );
       //   $this->lineBotService->pushMessage($target);
-        dd(app(LINEBot::class));
+        // dd(app(LINEBot::class));
 
     }
 
