@@ -1,17 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
+use LINE\LINEBot;
 
 use Illuminate\Http\Request;
 use App\Services\LineBotService;
 
 class TestController extends Controller
 {
-	private $lineBotService;
-	public function __construct(LineBotService $lineBotService)
-    {
-        $this->lineBotService = $lineBotService;
-    }
+	// private $lineBotService;
+	// public function __construct(LineBotService $lineBotService)
+ //    {
+ //        $this->lineBotService = $lineBotService;
+ //    }
     public function index()
     {
     	// $this->lineBotService->pushMessage('Elliot現在沒空');
@@ -28,7 +29,7 @@ class TestController extends Controller
 
     public function webhook()
     {	
-		$this->lineBotService->replyMessage('你才是');
+		// $this->lineBotService->replyMessage('你才是');
     	// \Log::info($request);
     }
 }
