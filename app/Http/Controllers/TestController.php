@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Services\LineBotService;
+use App\Services\LineReplyService;
 
 class TestController extends Controller
 {
@@ -20,12 +21,14 @@ class TestController extends Controller
     }
     public function index()
     {
-        // $content = new TextMessageBuilder('Elliot現在沒空');
-        // app(LINEBot::class)->pushMessage(env('LINE_USER_ID'),$content);
-    	// $this->lineBotService->pushMessage('Elliot現在沒空');
-         
-        $response = $this->lineBotService->pushMessage('Elliot現在沒空');
-        $this->assertEquals(200, $response->getHTTPStatus());
+        // $response = $this->lineBotService->pushMessage('Elliot現在沒空');
+        // $response = $this->lineBotService->pushVideoMessage('https://backend.jhong-demo.com.tw/images/582979657.141260.mp4','https://images.genius.com/60ec5fe01688173b91c19d04fe6de73f.500x500x1.jpg');
+        // $response = $this->lineBotService->pushStickerMessage('11538','51626530');
+        //$response = $this->lineBotService->pushTemplateMessage();
+
+
+
+        // $this->assertEquals(200, $response->getHTTPStatus());
         // $this->assertEquals(200, $response->getHTTPStatus()); 
         // 
     	 // $target = $this->lineBotService->buildTemplateMessageBuilderDeprecated(
@@ -40,7 +43,8 @@ class TestController extends Controller
 
     public function webhook()
     {	
+        LineReplyService::replyMessage('你才是');
 		// $this->lineBotService->replyMessage('你才是');
-    	// \Log::info($request);
+    	\Log::info($request);
     }
 }
