@@ -41,9 +41,10 @@ class TestController extends Controller
 
     }
 
-    public function webhook()
+    public function webhook(Request $request)
     {	
-        LineReplyService::replyMessage('你才是');
+        $lineReplyService = new LineReplyService($request['replyToken']);
+        $lineReplyService->replyMessage('你才是');
 		// $this->lineBotService->replyMessage('你才是');
     	\Log::info($request);
     }
